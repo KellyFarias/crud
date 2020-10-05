@@ -12,9 +12,51 @@ class MyCrud extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Crud 3'
+      title: 'Crud 3',
+      home: LoginPage(title: 'Firebase Auth')
+
       
     );
   }
 }
+
+class LoginPage extends StatefulWidget {
+  final String title;
+  LoginPage({Key key, this.title}) : super(key: key);
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController emailController= TextEditingController();
+  TextEditingController passwdController=TextEditingController();
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Login Page'),
+      ),
+      body: Container(
+          padding: EdgeInsets.all(15.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              TextField(
+                controller: emailController,
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  icon: Icon(Icons.email)
+                ),
+              )
+              
+            ],
+          ),
+        )
+    );
+  }
+}
+
 
