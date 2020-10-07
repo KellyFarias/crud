@@ -76,7 +76,7 @@ class _RegisterPageState extends State<RegisterPage> {
     if (user != null) {
       setState(() {
         _success = true;
-        _userEmail = user.email;
+        _userEmail = _emailController.text; //user.email
       });
     } else {
       _success = false;
