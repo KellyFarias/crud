@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class EmailGoogle extends StatefulWidget {
+class MainGoogle extends StatefulWidget {
   //@override
   final Widget child;
 
-  EmailGoogle({Key key, this.child}) : super(key: key);
+  MainGoogle({Key key, this.child}) : super(key: key);
 
-  _EmailGoogleState createState() => _EmailGoogleState();
+  _MainGoogleState createState() => _MainGoogleState();
 }
 
-class _EmailGoogleState extends State<EmailGoogle> {
+class _MainGoogleState extends State<MainGoogle> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
