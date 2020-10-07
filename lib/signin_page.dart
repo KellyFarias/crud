@@ -102,17 +102,20 @@ class _GoogleSignInSectionState extends State<_GoogleSignInSection> {
   void _SignInWithGoogle() async{
     final GoogleSignInAccount googleuser= await _googleSignIn.signIn();
     final GoogleSignInAuthentication googleAuth = await googleuser.authentication;
+    // ignore: deprecated_member_use
     final AuthCredential  credential= GoogleAuthProvider.getCredential(
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
-    final FirebaseUser user= await _auth.signInWithCredential(credential);
+    // ignore: deprecated_member_use
+    final FirebaseUser user= (await _auth.signInWithCredential(credential)).user;
     assert(user.displayName!= null);
     assert( await user.getIdToken()!= null);
 FirebaseUser currentUser= await _auth.currentUser;
 
 assert(user.uid==currentUser.uid);
 setState(() {
+  
   if(user!= null){
     _success=true;
     _userID=user.uid;

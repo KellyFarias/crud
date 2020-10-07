@@ -1,3 +1,5 @@
+import 'package:crud/googlePage.dart';
+import 'package:crud/signin_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -66,9 +68,10 @@ class _LoginPageState extends State<LoginPage> {
                     .signInWithEmailAndPassword(
                         email: emailController.text,
                         password: passwdController.text)
+                    // ignore: deprecated_member_use
                     .then((FirebaseUser user) {
                   Navigator.of(context).pushReplacement(CupertinoPageRoute(
-                    builder: (context) => Google_Page(),
+                    builder: (context) => MainGoogle(),
                   ));
                 }).catchError((e) {
                   print(e);
