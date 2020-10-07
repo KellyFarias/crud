@@ -1,4 +1,3 @@
-import 'dart:async';
 
 import 'package:crud/googlePage.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +30,7 @@ class _SignInPageState extends State<SignInPage> {
             return FlatButton(
               child: const Text('Sign out/Desconectar'),
               onPressed: () async {
+                // ignore: deprecated_member_use
                 final FirebaseUser user =  _auth.currentUser;
                   if(user==null){
                     Scaffold.of(context).showSnackBar(SnackBar(
@@ -71,7 +71,9 @@ class _GoogleSignInSection extends StatefulWidget {
 }
 
 class _GoogleSignInSectionState extends State<_GoogleSignInSection> {
+  // ignore: unused_field
   bool _success;
+  // ignore: unused_field
   String _userID;
   
   @override
@@ -99,6 +101,7 @@ class _GoogleSignInSectionState extends State<_GoogleSignInSection> {
     );
   }
 
+  // ignore: non_constant_identifier_names
   void _SignInWithGoogle() async{
     final GoogleSignInAccount googleuser= await _googleSignIn.signIn();
     final GoogleSignInAuthentication googleAuth = await googleuser.authentication;
@@ -111,7 +114,8 @@ class _GoogleSignInSectionState extends State<_GoogleSignInSection> {
     final FirebaseUser user= (await _auth.signInWithCredential(credential)).user;
     assert(user.displayName!= null);
     assert( await user.getIdToken()!= null);
-FirebaseUser currentUser= await _auth.currentUser;
+// ignore: deprecated_member_use
+FirebaseUser currentUser= _auth.currentUser;
 
 assert(user.uid==currentUser.uid);
 setState(() {

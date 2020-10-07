@@ -3,11 +3,7 @@ import 'package:crud/register_page.dart';
 import 'package:crud/signin_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_database/ui/firebase_animated_list.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 
 void main() {
   runApp(MyCrud());

@@ -29,6 +29,7 @@ class _RegisterPageState extends State<RegisterPage> {
             TextFormField(
               controller: _emailController,
               decoration: InputDecoration(labelText: 'Email'),
+              // ignore: missing_return
               validator: (String value) {
                 if (value.isEmpty) {
                   return 'Please enter some text';
@@ -38,6 +39,7 @@ class _RegisterPageState extends State<RegisterPage> {
             TextFormField(
               controller: _passswordController,
               decoration: InputDecoration(labelText: 'Password'),
+              // ignore: missing_return
               validator: (String value) {
                 if (value.isEmpty) {
                   return 'Please enter some text';
@@ -72,9 +74,11 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   void _register() async {
+    // ignore: deprecated_member_use
     final FirebaseUser user = (await _auth.createUserWithEmailAndPassword(
       email: _emailController.text,
       password: _passswordController.text,
+    // ignore: deprecated_member_use
     )) as FirebaseUser;
     if (user != null) {
       setState(() {
