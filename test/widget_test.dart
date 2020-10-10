@@ -6,7 +6,7 @@ import 'package:crud/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-        await tester.pumpWidget(MyCrud());
+        await tester.pumpWidget(MyApp());
 
         expect(find.text('0'), findsOneWidget);
     expect(find.text('1'), findsNothing);
